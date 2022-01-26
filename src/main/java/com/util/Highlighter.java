@@ -20,8 +20,6 @@ package com.util;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Random;
-
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
