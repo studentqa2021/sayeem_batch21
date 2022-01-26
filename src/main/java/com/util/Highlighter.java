@@ -18,8 +18,6 @@
 
 package com.util;
 
-import java.util.HashMap;
-import java.util.Map;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -27,11 +25,9 @@ import org.openqa.selenium.WebElement;
 public class Highlighter {
 	
 	public static void getColor (WebDriver driver, WebElement element,String color) {
-		Map<String,String> mp = new HashMap<>();
 		
-		mp.put(color, "arguments[0].style.border='5px solid "+color+"'");
 		
-		((JavascriptExecutor)driver).executeScript(mp.get(color), element);
+		((JavascriptExecutor)driver).executeScript("arguments[0].style.border='5px solid "+color+"'", element);
 		
 			
 	}
