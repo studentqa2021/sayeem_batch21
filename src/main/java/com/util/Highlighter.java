@@ -28,12 +28,8 @@ public class Highlighter {
 	
 	public static void getColor (WebDriver driver, WebElement element,String color) {
 		Map<String,String> mp = new HashMap<>();
-		mp.put("RED", "arguments[0].style.border='5px solid red'");
-		mp.put("BLUE", "arguments[0].style.border='5px solid blue'");
-		mp.put("GREEN", "arguments[0].style.border='5px solid green'");
-		mp.put("YELLOW", "arguments[0].style.border='5px solid yellow'");
-		mp.put("PURPLE", "arguments[0].style.border='5px solid purple'");
 		
+		mp.put(color, "arguments[0].style.border='5px solid "+color+"'");
 		
 		((JavascriptExecutor)driver).executeScript(mp.get(color), element);
 		
