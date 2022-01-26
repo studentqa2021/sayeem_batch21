@@ -46,7 +46,7 @@ public class Smoke_Test {
 		//you can pass any color from this site : w3schools.com/colors/colors_names.asp in getColor as a 3rd Argument
 		Highlighter.getColor(driver, MPF.getUser(),"Tomato");
 		Thread.sleep(3000);
-		Highlighter.getColor(driver, MPF.getPassword(),"GREEN");
+		Highlighter.getColor(driver, MPF.getPassword(),"MidnightBlue");
 		MPF.getUser().sendKeys(BC.getValue("user"));
 		MPF.getPassword().sendKeys(BC.getValue("password"));
 		Thread.sleep(2000);
