@@ -43,8 +43,9 @@ public class Smoke_Test {
 		MasterPageFactory MPF = new MasterPageFactory(driver);
 		BaseConfig BC = new BaseConfig();
 		driver.get("https://demo.guru99.com/test/newtours/");
-		Highlighter.getColor(driver, MPF.getUser());
-		Highlighter.getColor(driver, MPF.getPassword());
+		Highlighter.getColor(driver, MPF.getUser(),"RED");
+		Thread.sleep(3000);
+		Highlighter.getColor(driver, MPF.getPassword(),"GREEN");
 		MPF.getUser().sendKeys(BC.getValue("user"));
 		MPF.getPassword().sendKeys(BC.getValue("password"));
 		//Thread.sleep(5000);
