@@ -43,6 +43,7 @@ public class Smoke_Test {
 		MasterPageFactory MPF = new MasterPageFactory(driver);
 		BaseConfig BC = new BaseConfig();
 		driver.get("https://demo.guru99.com/test/newtours/");
+		//you can pass 5 colors ("RED","BLUE","GREEN","YELLOW","PURPLE") in getColor as a 3rd Argument
 		Highlighter.getColor(driver, MPF.getUser(),"RED");
 		Thread.sleep(3000);
 		Highlighter.getColor(driver, MPF.getPassword(),"GREEN");
