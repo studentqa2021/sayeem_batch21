@@ -24,10 +24,17 @@ import org.openqa.selenium.WebElement;
 
 public class Highlighter {
 	
-	public static void getColor (WebDriver driver, WebElement element,String color) {
+	public void getColor (WebDriver driver, WebElement element,String color) {
 		
 		
 		((JavascriptExecutor)driver).executeScript("arguments[0].style.border='5px solid "+color+"'", element);
+		
+			
+	}
+	public void getColor (WebDriver driver, WebElement element) {
+		
+		
+		((JavascriptExecutor)driver).executeScript("arguments[0].style.border='5px solid red'", element);
 		
 			
 	}

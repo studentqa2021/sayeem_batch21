@@ -23,7 +23,7 @@ import java.util.Properties;
 
 public class BaseConfig {
 	
-	private static FileInputStream fis;
+	private FileInputStream fis;
 	
 	public String getValue(String value) throws Exception
 	{
