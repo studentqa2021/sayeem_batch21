@@ -19,13 +19,15 @@
 package com.util;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Properties;
 
 public class BaseConfig {
 	
 	private FileInputStream fis;
 	
-	public String getValue(String value) throws Exception
+	public String getValue(String value) throws FileNotFoundException,IOException
 	{
 		fis = new FileInputStream("config.properties");
 		Properties prop = new Properties();

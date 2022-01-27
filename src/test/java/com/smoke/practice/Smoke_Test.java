@@ -51,7 +51,7 @@ public class Smoke_Test {
 		MPF.getUser().sendKeys(BC.getValue("user"));
 		MPF.getPassword().sendKeys(BC.getValue("password"));
 		Thread.sleep(2000);
-		highlighter.getColor(driver, MPF.getSubmit(),"Orange");
+		highlighter.getColor(driver, MPF.getSubmit(),"Orange"); 
 		//MPF.getSubmit().click();
 		
 	}
