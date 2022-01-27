@@ -22,7 +22,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class Highlighter {
+public class HighLighter {
 	
 	public void getColor (WebDriver driver, WebElement element,String color) {
 		
