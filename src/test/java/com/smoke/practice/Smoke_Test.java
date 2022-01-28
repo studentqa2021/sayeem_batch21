@@ -42,7 +42,7 @@ public class Smoke_Test {
 		//obj.baselogin();
 		MasterPageFactory MPF = new MasterPageFactory(driver);
 		BaseConfig BC = new BaseConfig();
-		driver.get("https://demo.guru99.com/test/newtours/");
+		driver.get(BC.getValue("url"));
 		HighLighter highLighter = new HighLighter();
 		//you can pass any color from this site : w3schools.com/colors/colors_names.asp in getColor as a 3rd Argument
 		highLighter.getColor(driver, MPF.getUser(), "Tomato");
