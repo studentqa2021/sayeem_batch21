@@ -32,7 +32,7 @@ public class ChromeOptionExp {
 		WebDriverManager.chromedriver().setup();
 		ChromeOptions opt = new ChromeOptions();
 		opt.setExperimentalOption("excludeSwitches", Arrays.asList("disable-popup-blocking"));
-		WebDriver driver = new ChromeDriver();
+		WebDriver driver = new ChromeDriver(opt);
 		driver.get("https://naukri.com");
 
 	}
