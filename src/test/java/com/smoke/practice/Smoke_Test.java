@@ -24,6 +24,8 @@ import com.generic.practice.MasterPageFactory;
 import com.util.BaseConfig;
 import com.util.HighLighter;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 /**
  * @author SAM
  *
@@ -32,14 +34,13 @@ public class Smoke_Test {
 	
 	public static void main(String[] args) throws Exception {
 		
-		System.setProperty("webdriver.chrome.driver",
-				"./Driver/chromedriver.exe");
-		
-		
+		/*
+		 * System.setProperty("webdriver.chrome.driver", "./Driver/chromedriver.exe");
+		 * BaseLogin obj = new BaseLogin(); obj.baselogin();
+		 * 
+		 */
+		WebDriverManager.chromedriver().setup();
 		WebDriver driver = new ChromeDriver();
-		
-		//BaseLogin obj = new BaseLogin();
-		//obj.baselogin();
 		MasterPageFactory MPF = new MasterPageFactory(driver);
 		BaseConfig BC = new BaseConfig();
 		driver.get("https://demo.guru99.com/test/newtours/");
