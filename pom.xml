@@ -10,6 +10,17 @@
     	 <artifactId>selenium-java</artifactId>
     	 <version>4.1.1</version>
  	</dependency>
+ 	<dependency>
+			<groupId>com.aventstack</groupId>
+			<artifactId>extentreports</artifactId>
+			<version>4.0.9</version>
+	</dependency>
+	<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>7.4.0</version>
+			<scope>compile</scope>
+	</dependency>
 	<dependency>
     	<groupId>io.github.bonigarcia</groupId>
     	<artifactId>webdrivermanager</artifactId>
