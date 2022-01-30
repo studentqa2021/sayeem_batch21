@@ -18,23 +18,39 @@
 
 package com.util;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Random;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class HighLighter {
 	
-	public void getColor (WebDriver driver, WebElement element,String color) {
+	public void getColor (WebDriver driver, WebElement element,String color) 
+        {
 		
 		
-		((JavascriptExecutor)driver).executeScript("arguments[0].style.border='5px solid "+color+"'", element);
+            ((JavascriptExecutor)driver).executeScript(
+                    "arguments[0].style.border='5px solid "+color+"'", element);
 		
 			
 	}
-	public void getColor (WebDriver driver, WebElement element) {
+	public void getColor (WebDriver driver, WebElement element) 
+        {
+            Map<Integer,String> color = new HashMap<>();
+            Random r = new Random();
+            int rand;
+            color.put(1, "arguments[0].style.border='5px solid red'");
+            color.put(2, "arguments[0].style.border='5px solid blue'");
+            color.put(3, "arguments[0].style.border='5px solid green'");
+            color.put(4, "arguments[0].style.border='5px solid yellow'");
+            color.put(5, "arguments[0].style.border='5px solid purple'");
+            rand = r.nextInt(5)+1;
 		
 		
-		((JavascriptExecutor)driver).executeScript("arguments[0].style.border='5px solid red'", element);
+		((JavascriptExecutor)driver).executeScript(
+                        ""+color.get((rand)), element);
 		
 			
 	}
