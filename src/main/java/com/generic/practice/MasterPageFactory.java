@@ -37,6 +37,8 @@ public class MasterPageFactory {
 		PageFactory.initElements(driver, this);
 	}
 	
+	//@FindBy(xpath = "//*[@ = '']");
+	private WebElement signout;
 	@FindBy(xpath = "//*[@name = 'userName']")
 	private WebElement user;
 	@FindBy(xpath = "//*[@name = 'password']")

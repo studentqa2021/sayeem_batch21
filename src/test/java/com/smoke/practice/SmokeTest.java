@@ -19,6 +19,7 @@ package com.smoke.practice;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
 
 import com.generic.practice.MasterPageFactory;
 import com.util.BaseConfig;
@@ -30,9 +31,13 @@ import io.github.bonigarcia.wdm.WebDriverManager;
  * @author SAM
  *
  */
-public class Smoke_Test {
+
+public class SmokeTest {
 	
-	public static void main(String[] args) throws Exception {
+	//public static void main(String[] args) throws Exception
+	@Test 
+	public void testNG() throws Exception
+	{
 		
 		/*
 		 * System.setProperty("webdriver.chrome.driver", "./Driver/chromedriver.exe");
@@ -53,7 +58,7 @@ public class Smoke_Test {
 		MPF.getPassword().sendKeys(BC.getValue("password"));
 		Thread.sleep(2000);
 		highLighter.getColor(driver, MPF.getSubmit(),"Orange"); 
-		//MPF.getSubmit().click();
+		MPF.getSubmit().click();
 		
 	}
 
