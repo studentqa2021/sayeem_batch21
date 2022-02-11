@@ -23,6 +23,7 @@ import org.testng.annotations.Test;
 
 import com.generic.practice.MasterPageFactory;
 import com.util.BaseConfig;
+import com.util.CrossBrowserCheck;
 import com.util.HighLighter;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -36,7 +37,7 @@ public class SmokeTest {
 	
 	//public static void main(String[] args) throws Exception
 	@Test 
-	public void testNG() throws Exception
+	public void testNG() throws Throwable
 	{
 		
 		/*
@@ -44,8 +45,8 @@ public class SmokeTest {
 		 * BaseLogin obj = new BaseLogin(); obj.baselogin();
 		 * 
 		 */
-		WebDriverManager.chromedriver().setup();
-		WebDriver driver = new ChromeDriver();
+		
+		WebDriver driver = CrossBrowserCheck.browserCheck("chrome");;
 		MasterPageFactory MPF = new MasterPageFactory(driver);
 		BaseConfig BC = new BaseConfig();
 		driver.get(BC.getValue("url"));
