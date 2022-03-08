@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022 SAM
+ * Copyright (c) 2022 SAM
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -15,9 +15,30 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  */
+
 package com.smoke.practice;
 
-public interface A {
-	void getSalary();
+public abstract class JPMorgan implements ApplicationFunctions 
+{
 
+	@Override
+	public void product() 
+	{
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void payment() 
+	{
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void login() 
+	{
+		// TODO Auto-generated method stub
+		
+	}
 }

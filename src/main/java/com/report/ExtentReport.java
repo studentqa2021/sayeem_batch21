@@ -74,30 +74,30 @@ public class ExtentReport {
 	@AfterMethod
 	public void aftermethod(ITestResult result) throws Exception {
 
-		if (result.getStatus() == ITestResult.FAILURE) {
-			test.fail(MarkupHelper.createLabel(result.getName() + "Test Failed", ExtentColor.RED));
-			test.log(Status.FAIL, "The test status::" + result.getStatus() + ":: Test FAIL");
-			test.fail("Test Failed and check the screen shot below", MediaEntityBuilder
-					.createScreenCaptureFromPath("./target/Screen shot/Login Test status.png").build());
-
-		} else if (result.getStatus() == ITestResult.SUCCESS) {
-			test.pass(MarkupHelper.createLabel(result.getName() + "Test Passed", ExtentColor.GREEN));
-			test.log(Status.PASS, "The test status::" + result.getStatus() + ":: Test Passed");
-			
-			test.pass("Test passed and check Screen shot below", MediaEntityBuilder
-					.createScreenCaptureFromPath("./target/Screen shot/Login Test status.png").build());
-
-		} else {
-			test.skip(MarkupHelper.createLabel(result.getName() + "Test Skipped", ExtentColor.YELLOW));
-			test.skip(result.getThrowable());
-			test.log(Status.SKIP, "The test status::" + result.getStatus() + ":: Test SKIP");
-
-		}
+            switch (result.getStatus()) {
+                case ITestResult.FAILURE:
+                    test.fail(MarkupHelper.createLabel(result.getName() + "Test Failed", ExtentColor.RED));
+                    test.log(Status.FAIL, "The test status::" + result.getStatus() + ":: Test FAIL");
+                    test.fail("Test Failed and check the screen shot below", MediaEntityBuilder
+                            .createScreenCaptureFromPath("./target/Screen shot/Login Test status.png").build());
+                    break;
+                case ITestResult.SUCCESS:
+                    test.pass(MarkupHelper.createLabel(result.getName() + "Test Passed", ExtentColor.GREEN));
+                    test.log(Status.PASS, "The test status::" + result.getStatus() + ":: Test Passed");
+                    test.pass("Test passed and check Screen shot below", MediaEntityBuilder
+                            .createScreenCaptureFromPath("./target/Screen shot/Login Test status.png").build());
+                    break;
+                default:
+                    test.skip(MarkupHelper.createLabel(result.getName() + "Test Skipped", ExtentColor.YELLOW));
+                    test.skip(result.getThrowable());
+                    test.log(Status.SKIP, "The test status::" + result.getStatus() + ":: Test SKIP");
+                    break;
+            }
 
 	}
 
 	@AfterTest
-	public void sfterSuite() {
+	public void AfterSuite() {
 		extent.flush();
 
 	}
